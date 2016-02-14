@@ -1,0 +1,1196 @@
+$display: "trashhandregular", sans-serif
+$sans: Helvetica, Arial, sans-serif
+
+$yellow-light: #ffd800
+$yellow: #ffa800
+$gray-lighter: #f3f3f3
+$gray-light: #bfbfbf
+$gray: #545454
+$gray-dark: #3f3f3f
+$gray-darker: #141414
+
+=breakpoint($point)
+	@if $point == "retina"
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+			@content
+	@else if $point == "xs"
+		@media screen and (max-width: 420px)
+			@content
+	@else if $point == "sm"
+		@media screen and (max-width: 680px)
+			@content
+	@else if $point == "md"
+		@media screen and (max-width: 880px)
+			@content
+	@else if $point == "lg"
+		@media screen and (min-width: 880px + 1)
+			@content
+
+=stretch($top: 0, $right: 0, $bottom: 0, $left: 0)
+	position: absolute
+	@if $top
+		top: $top
+	@if $bottom
+		bottom: $bottom
+	@if $left
+		left: $left
+	@if $right
+		right: $right
+
+=stretch-y($top: 0, $bottom: 0)
+	+stretch($top, false, $bottom, false)
+
+=stretch-x($left: 0, $right: 0)
+	+stretch(false, $right, false, $left)
+
+=fade-out
+	opacity: 0
+	transition: visibility .2s, opacity .2s ease-out
+	visibility: hidden
+=fade-in
+	opacity: 1
+	transition: opacity .2s ease-out
+	visibility: visible
+
+/* Fonts/Libs */
+
+@import "slick"
+@import "icons"
+@import "fancybox"
+
+@font-face
+	font-family: "trashhandregular"
+	src: url("../fonts/TrashHand-webfont.eot")
+	src: url("../fonts/TrashHand-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/TrashHand-webfont.woff") format("woff"), url("../fonts/TrashHand-webfont.ttf") format("truetype"), url("../fonts/TrashHand-webfont.svg#trashhandregular") format("svg")
+	font-weight: normal
+	font-style: normal
+
+// Tags
+
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+body
+	color: $gray
+	font: 15px/22px $sans
+fieldset, img, object, embed, iframe
+	border: 0 none
+iframe
+	width: 100%
+button
+	background: none
+	border: 0 none
+	cursor: pointer
+img
+	height: auto
+	max-width: 100%
+	vertical-align: bottom
+li
+	list-style: none
+hr, .screen-reader-response
+	display: none
+a
+	color: $yellow
+	text-decoration: underline
+
+// Common
+
+%cf:after
+	clear: both
+	content: ""
+	display: table
+
+%cover
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+$gutter: 15px
+
+.wrap
+	display: block
+	margin-left: auto
+	margin-right: auto
+	max-width: 960px + $gutter * 2
+	padding: 0 $gutter
+
+.button,
+.main #infinite-handle
+	background: $yellow
+	border: 0 none
+	color: #fff
+	display: inline-block
+	font: bold 13px/47px $sans
+	padding: 0 20px
+	vertical-align: bottom
+	text-decoration: none
+	text-transform: uppercase
+	white-space: nowrap
+.button
+	img
+		display: inline-block
+		margin-left: 10px
+		position: relative
+		top: -1px
+		vertical-align: middle
+	~ .button
+		margin-left: 25px
+	[class^="icon-"],
+	[class*=" icon-"]
+		display: inline-block
+		font-size: 1.5em
+		line-height: inherit
+		margin-right: .5em
+		position: relative
+		top: -1px
+		vertical-align: middle
+		&:before
+			display: inline-block
+			line-height: inherit
+			vertical-align: middle
+	&.alt
+		font-size: 11px
+		line-height: 33px
+	&.pink
+		background-color: #ff0084
+	&.brown
+		background-color: #eb4b53
+.main
+	#infinite-handle
+		clear: both
+		cursor: pointer
+		text-align: center
+		width: 100%
+		span, button
+			background: inherit
+			font: inherit
+			text-transform: inherit
+	.infinite-loader
+		clear: both
+		margin: 0 auto
+		width: 34px
+#infinite-footer
+	display: none !important
+
+.caret
+	border-bottom: 5px solid transparent
+	border-left: 5px solid #fff
+	border-top: 5px solid transparent
+	display: inline-block
+	margin-left: .5em
+	position: relative
+	top: -1px
+	vertical-align: middle
+	&.alt,
+	&.left
+		border-left: 0 none
+		border-right: 5px solid #fff
+		margin-left: 0
+		margin-right: .5em
+
+.div
+	@extend %cf
+	margin-bottom: 80px
+	p, ul, ol
+		margin-bottom: 20px
+
+.heading
+	color: $yellow
+	font: 40px $display
+	margin-bottom: 20px
+	.header &
+		margin-bottom: 0
+
+.txt-right
+	text-align: right
+
+.frame
+	height: 0
+	padding-bottom: percentage(9/16)
+	position: relative
+	object, embed, iframe
+		height: 100%
+		left: 0
+		position: absolute
+		top: 0
+		width: 100%
+.acf-map
+	// height: 540px
+	height: 200px
+	width: 100%
+
+.size-hor-1
+	width: 100%
+
+// Header
+
+.head
+	background: #fff
+	margin-bottom: 80px
+	position: relative
+	z-index: 20
+	.wrap
+		@extend %cf
+		position: relative
+	.logo,
+	.social
+		height: 62px
+	.logo
+		float: left
+		position: relative
+		+breakpoint("xs")
+			float: none
+		img
+			display: block
+			left: 0
+			max-width: none
+			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
+			+breakpoint("xs")
+				left: 50%
+				transform: translate(-50%, -50%)
+	.social
+		float: right
+		padding: 18px 200px 0 0
+		+breakpoint("md")
+			display: none
+
+.social
+	font: 0/0 $sans
+	.foot &
+		margin-bottom: 60px
+	a
+		text-decoration: none
+	.menu-item
+		display: inline-block
+		margin-bottom: 5px
+		text-align: center
+	[class^="icon-"],
+	[class*=" icon-"]
+		background: $yellow
+		border-radius: 50%
+		color: #fff
+		display: inline-block
+		font-size: 14px
+		line-height: 26px
+		margin: 0 5px
+		vertical-align: middle
+		width: 26px
+		&:before
+			display: block
+			line-height: inherit
+		.foot &
+			color: $gray-dark
+			font-size: 20px
+			line-height: 36px
+			width: 36px
+	.icon-tripadvisor,
+	.icon-mail
+		background: none
+		color: $yellow
+		font-size: 20px
+		margin-left: 10px
+		width: auto
+		.foot &
+			color: $yellow
+			font-size: 30px
+			margin-left: 15px
+	.icon-tripadvisor
+		font-size: 26px
+		.foot &
+			font-size: 36px
+
+.nav
+	background: $gray
+	height: 46px
+.search
+	position: absolute
+	right: $gutter
+	top: -31px
+	transform: translate(0, -50%)
+	+breakpoint("xs")
+		display: none
+	input
+		appearance: none
+		border: 1px solid #ededed
+		border-radius: 5px
+		color: $gray
+		display: block
+		font: 15px $sans
+		height: 34px
+		outline: none
+		padding: 0 5px
+		width: 184px
+	button
+		display: none
+.menu
+	background: $gray
+	font: 11px/18px $sans
+	text-transform: uppercase
+	+breakpoint("md")
+		+stretch-x
+		display: none
+		padding: 10px 0
+		top: 100%
+		.sub-menu
+			display: none
+			&.show
+				display: block
+	a
+		color: #fff
+		display: block
+		height: inherit
+		padding-top: 14px
+		text-decoration: none
+		&:hover, &:focus
+			color: $yellow
+		+breakpoint("md")
+			border-top: 1px dotted $gray-light
+			font-size: 13px
+			height: auto
+			padding: 10px $gutter
+	.menu-item
+		position: relative
+	> .menu-item
+		float: left
+		height: 46px
+		margin-right: 15px
+		+breakpoint("md")
+			float: none
+			height: auto
+			margin: 0
+	.menu-item-has-children > a:after
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+		border-top: 8px solid #fff
+		content: ""
+		display: inline-block
+		margin-left: 5px
+		position: relative
+		top: -1px
+		vertical-align: middle
+	ul
+		+fade-out
+		background: $gray
+		box-sizing: content-box
+		display: block
+		left: -10px
+		min-width: 100%
+		padding: 0 10px
+		position: absolute
+		top: 100%
+		white-space: nowrap
+		+breakpoint("md")
+			+fade-in
+			min-width: 0
+			position: static
+		a
+			border-top: 1px dotted $gray-light
+			display: block
+			margin: 0 -10px
+			padding: 10px
+			+breakpoint("md")
+				padding-left: 30px
+		ul
+			+fade-out
+			border-left: 1px dotted $gray-light
+			left: 100%
+			margin-left: 10px
+			min-width: 0
+			top: 0
+			+breakpoint("md")
+				+fade-in
+				border-left: 0 none
+				margin: 0 -10px
+				position: static
+				a
+					padding-left: 50px
+	li:hover > ul
+		+fade-in
+.lang
+	float: right
+	// font: 0/0 sans-serif
+	padding-top: 14px + 3
+	.menu-item
+		display: inline-block
+		margin-left: 10px
+		// overflow: hidden
+		position: relative
+		vertical-align: top
+	img
+		max-width: none
+		opacity: .5
+		vertical-align: top
+	.menu-item.current img
+		opacity: 1
+
+.toggle-on,
+.toggle-off
+	display: none
+	float: left
+	padding: 13px 0
+	width: 30px
+	span
+		background: #fff
+		border-radius: 1px
+		display: block
+		height: 3px
+.toggle-on
+	span ~ span
+		margin-top: 5px
+	+breakpoint("md")
+		display: block
+.toggle-off
+	span
+		margin-top: 8px
+		transform: rotate(45deg)
+		~ span
+			margin-top: -3px
+			transform: rotate(-45deg)
+.nav:target
+	+breakpoint("md")
+		.toggle-on
+			display: none
+		.toggle-off,
+		.menu
+			display: block
+
+// Footer
+
+.foot
+	@extend %cf
+	background: #3f3f3f
+	clear: both
+	color: $yellow
+	padding-top: 40px
+	text-align: center
+	.heading
+		font: 30px/1 $display
+		margin-bottom: 30px
+.copyright
+	color: $yellow
+	font: 12px/20px $sans
+	margin: 40px 0
+
+// Home
+
+.hero
+	font: bold 23px $sans
+	height: 416px
+	margin: -80px 0 80px
+	position: relative
+	text-align: center
+	+breakpoint("md")
+		font-size: 16px
+		height: 316px
+	+breakpoint("xs")
+		br
+			display: none
+	a
+		color: #fff
+		display: block
+		height: 416px
+		outline: none
+		position: relative
+		+breakpoint("md")
+			height: 366px
+	.list
+		+stretch
+		opacity: 0
+		&.on
+			opacity: 1
+	.item
+		background-color: #f0f0f0
+		background-position: center center
+		background-size: cover
+	.wrap
+		display: block
+		left: 50%
+		position: absolute
+		top: 50%
+		transform: translate(-50%, -50%)
+		+breakpoint("md")
+			left: $gutter
+			right: $gutter
+			transform: translate(0, -50%)
+	.heading
+		color: inherit
+		font: 55px $display
+		margin-bottom: 10px
+		+breakpoint("md")
+			font-size: 45px
+.no-js .item
+	display: none
+	&:first-child
+		display: block
+.slick-prev,
+.slick-next
+	background: rgba(#000,.1)
+	display: block
+	height: 170px
+	font: 0/0 $sans
+	margin-top: -85px
+	outline: none
+	position: absolute
+	top: 50%
+	width: 90px
+	z-index: 10
+	+breakpoint("md")
+		display: none !important
+	&:before
+		color: #fff
+		display: block
+		font: bold 70px/170px $sans
+.slick-prev
+	left: 0
+	&:before
+		content: "<"
+.slick-next
+	right: 0
+	&:before
+		content: ">"
+.slick-dots
+	bottom: 16px
+	font: 0/0 $sans
+	left: 50%
+	position: absolute
+	transform: translate(-50%, 0)
+	+breakpoint("sm")
+		bottom: -30px
+	li
+		display: inline
+		font: inherit
+		margin: 0 3px
+	button
+		background: #fff
+		border: 2px solid #fff
+		border-radius: 50%
+		display: inline-block
+		font: inherit
+		height: 13px
+		outline: none
+		overflow: hidden
+		width: 13px
+	.slick-active button
+		background: #000
+
+.videos
+	+breakpoint("sm")
+		.button
+			display: block
+			margin: 0 0 10px
+			text-align: center
+
+.newsletter
+	@extend %cf
+	background: url("../img/pattern.png"), url("../img/sao-luiz.jpg") center center
+	background-size: auto, cover
+	border-top: 8px solid $yellow
+	margin-bottom: 80px
+	padding: 30px 0 40px
+	.heading
+		color: #fff
+	input
+		background: #fff
+		border: 0 none
+		display: block
+		float: left
+		font: bold 17px/21px $sans
+		height: 47px
+		padding: 13px
+		width: 82%
+		+breakpoint("xs")
+			width: 74%
+	.button
+		float: right
+		padding: 0
+		text-align: center
+		width: 14%
+		+breakpoint("xs")
+			width: 22%
+
+.features
+	margin: 0 -10px
+	.item
+		@extend %cover
+		background-clip: padding-box
+		border-left: 10px solid transparent
+		border-right: 10px solid transparent
+		float: left
+		margin-bottom: 20px
+		width: 25%
+		+breakpoint("sm")
+			width: 50%
+		+breakpoint("xs")
+			width: 100%
+	a
+		background: url("../img/pattern.png")
+		color: #fff
+		display: block
+		height: 375px
+		position: relative
+	.body
+		@extend %cf
+		+stretch-x
+		background: rgba(#000,.6)
+		bottom: 0
+		padding: 16px 20px
+	p
+		font: 11px $sans
+		margin: 0
+		+breakpoint("sm")
+			font-size: 14px
+	.title
+		font: bold 18px/22px $sans
+		margin-bottom: 14px
+		text-decoration: underline
+	br
+		display: none
+	p br
+		display: inline
+	.more
+		clear: both
+		display: block
+		font: 11px $sans
+		padding-top: 14px
+		text-align: right
+		text-decoration: underline
+		+breakpoint("sm")
+			font-size: 14px
+	&.alt
+		@extend %cf
+		margin-bottom: 120px
+		a
+			height: 278px
+		.title
+			border-bottom: 1px solid $yellow-light
+			color: $yellow-light
+			display: inline
+			font-size: 15px
+			margin: 0
+			text-decoration: none
+			text-transform: uppercase
+		p
+			display: block
+			font: bold 14px/22px $sans
+			margin: 5px 0 0
+
+// Pages
+
+.breadcrumb
+	color: $yellow
+	font: 12px $sans
+	margin: -40px 0 40px
+	ul, li
+		display: inline
+	li ~ li:before
+		content: "/"
+		margin: 0 .3em
+	a
+		border-bottom: 1px solid $yellow
+		text-decoration: none
+
+.header
+	@extend %cf
+	margin-bottom: 40px
+	img
+		display: block
+		width: 100%
+
+.content
+	margin-bottom: 120px
+	p, ul, ol, .box
+		margin-bottom: 20px
+	h1, h2, h3, h4, h5, h6
+		font: bold 20px $sans
+		margin-bottom: 15px
+	hr
+		border: 0 none
+		border-top: 1px solid $gray-light
+		display: block
+		margin: 40px 0
+		width: 100%
+	form
+		input[type="text"],
+		input[type="email"],
+		textarea
+			border: 2px solid $gray-light
+			display: block
+			font: 15px $sans
+			padding: 8px 10px
+			width: 100%
+		.submit
+			position: relative
+			text-align: right
+			img
+				display: block
+				position: absolute
+				right: -5px
+				top: 50%
+				transform: translate(100%, -50%)
+
+	.tags
+		font-size: 12px
+		font-style: italic
+		margin-top: 40px
+		text-transform: uppercase
+		a
+			border-bottom: 1px solid $yellow
+			text-decoration: none
+	.preview
+		border: 1px solid $gray-light
+		margin-bottom: 40px
+		img
+			border: 10px solid #fff
+			box-shadow: 1px 0 0 0 $gray-light
+			box-sizing: content-box
+			float: left
+			width: 130px
+			+breakpoint("xs")
+				box-sizing: border-box
+				float: none
+				width: 100%
+		.caption
+			border-left: 1px solid $gray-light
+			margin: 0 0 0 150px
+			padding: 10px 15px
+			+breakpoint("xs")
+				border-left: 0 none
+				margin-left: 0
+			p
+				font-size: 12px
+				margin: 0
+			h1, h2, h3, h4, h5, h6
+				font: bold 14px/22px $sans
+				margin: 0 0 5px
+		.source
+			background: #e6e6e6
+			border-top: 1px solid $gray-light
+			clear: both
+			font: 10px/16px $sans
+			padding: 10px
+			text-transform: uppercase
+			a
+				border-bottom: 1px solid $yellow
+				text-decoration: none
+	.box
+		background: $yellow
+		border-color: #fff
+		clear: both
+		color: #fff
+		display: block
+		padding: 20px
+		a
+			color: inherit
+		.title
+			font: bold 18px/40px $sans
+			text-transform: uppercase
+			i
+				margin-right: .5em
+			i.icon-none
+				display: none
+		ul, ol
+			font: 0/0 sans-serif
+			margin: 40px 0 0
+			text-align: right
+			li
+				border: 2px solid #fff
+				display: inline-block
+				font: bold 15px/32px $sans
+				padding: 0 15px
+				+breakpoint("xs")
+					display: block
+			li ~ li
+				margin-left: 20px
+				+breakpoint("xs")
+					margin-left: 0
+					margin-top: 5px
+			+ p, + ul, + ol
+				margin-top: 20px
+		&.green
+			background: #94c37a
+		&.gray
+			background: #eee
+			color: #000
+			a
+				color: inherit
+			ul li, ol li
+				border-color: inherit
+
+	.alignleft
+		float: left
+		margin: 0 30px 20px 0
+	.alignright
+		float: right
+		margin: 0 0 20px 30px
+	.aligncenter
+		display: block
+		margin: 0 auto 20px
+	.wp-caption-text
+		font: 12px/18px $sans
+	.gallery
+		clear: both
+		font: 0/0 sans-serif
+		margin: 0 (100% / 10) 20px
+		+breakpoint("sm")
+			margin-left: -4px
+			margin-right: -4px
+	.gallery-item
+		display: inline-block
+		padding: 5px
+		width: (100% / 3)
+		+breakpoint("sm")
+			padding: 4px
+			width: 50%
+		img
+			display: block
+			width: 100%
+	.gallery-caption
+		display: none
+
+.with-sidebar,
+.directory,
+.media
+	.content
+		clear: left
+		float: left
+		width: 71%
+		+breakpoint("sm")
+			float: none
+			width: 100%
+	.gallery
+		margin-left: -4px
+		margin-right: -4px
+	.gallery-item
+		padding: 4px
+		width: (100% / 4)
+		+breakpoint("sm")
+			padding: 4px
+			width: 50%
+.with-sidebar
+	.sidebar .sharedaddy
+		display: none
+		+breakpoint("sm")
+			display: block
+	+breakpoint("sm")
+		.content .sharedaddy:first-child
+			display: none
+.media .content
+	width: auto
+
+.sidebar
+	float: right
+	margin-bottom: 80px
+	width: 25%
+	+breakpoint("sm")
+		clear: both
+		float: none
+		margin-top: 40px
+		width: 100%
+
+.widget
+	background: $gray-lighter
+	border-top: 7px solid $yellow
+	font: 12px/18px $sans
+	margin-bottom: 40px
+	padding: 10px
+	p
+		margin-top: 10px
+		&:first-child
+			margin-top: 0
+	ul
+		line-height: 2em
+	h1, h2, h3
+		font: bold 17px/42px $sans
+		text-transform: uppercase
+	h4, h5, h6
+		margin: 20px 0 0
+		text-transform: uppercase
+		+ p
+			margin-top: 0
+	.title,
+	h1:first-child,
+	h2:first-child,
+	h3:first-child
+		font: bold 15px/42px $sans
+		margin: -10px -10px 10px
+		padding: 0 0 0 10px
+	img + img
+		margin-left: .5em
+	[class^="icon-"],
+	[class*=" icon-"]
+		color: inherit
+		display: inline-block
+		font-size: 15px
+		margin-right: .5em
+		position: relative
+		text-decoration: none
+		top: -1px
+		vertical-align: middle
+		&:before
+			display: inherit
+			line-height: inherit
+			vertical-align: inherit
+	&.twitter,
+	&.instagram
+		border: 0 none
+		i
+			display: inline-block
+			font-size: 23px
+			margin: 0 8px 0 2px
+			position: relative
+			top: -1px
+			vertical-align: middle
+			&:before
+				display: inherit
+				line-height: inherit
+				vertical-align: inherit
+		.more
+			display: block
+			font: bold 12px/26px $sans
+			margin-top: 10px
+			text-align: center
+			text-decoration: none
+			text-transform: uppercase
+			i
+				font-size: 18px
+	&.twitter
+		.title, .more
+			background: #3cc6f4
+			color: #fff
+	&.instagram
+		.title, .more
+			background: #eb4b53
+			color: #fff
+
+.tweets-list li
+	@extend %cf
+	background: #fff
+	font: 10px/14px $sans
+	padding: 15px
+	img
+		border: 1px solid $gray-light
+		display: inline-block
+		float: left
+		margin: 0 8px 8px 0
+		padding: 2px
+		position: relative
+		top: 1px
+	p
+		margin-top: 0
+	p ~ p
+		clear: both
+		color: $gray-light
+		margin-top: 1em
+		text-align: center
+		&:before,
+		&:after
+			content: "---"
+			margin: 0 .5em
+.tweets-list li ~ li,
+.instagram-list li ~ li
+	margin-top: 10px
+
+.share
+	font: 0/0 sans-serif
+	margin: 40px 0
+	&:first-child
+		margin-top: 0
+	a
+		background: $yellow
+		color: #fff
+		display: inline-block
+		font-size: 18px
+		line-height: 26px
+		text-align: center
+		text-decoration: none
+		vertical-align: top
+		width: 26px
+		&:before
+			display: block
+			line-height: inherit
+		~ a
+			margin-left: 10px
+	.icon-facebook
+		background: #3a5898
+	.icon-twitter
+		background: #3cc6f4
+	.icon-googleplus
+		background: #eb4b53
+	.icon-whatsapp
+		background: #58cd65
+
+.sd-social-icon .sd-content ul li.share-email a.sd-button
+	background-color: $yellow !important
+	color: #fff !important
+
+.sharedaddy
+	margin: 40px 0
+	&:first-child
+		margin-top: 0
+	.sd-social-icon .sd-content ul li[class*=share-]
+		a, a:hover, div.option a
+			border-radius: 0
+			padding: 5px
+	.sd-content ul li a.sd-button:before
+		transform: scale(1.25)
+	.sd-content ul li.share-whatsapp a.sd-button
+		background-image: none !important
+		color: #fff !important
+		&:before
+			@extend .icon-whatsapp:before
+			font-family: "atins" !important
+			transform: scale(1)
+
+.locations
+	@extend %cf
+	margin: 0 -5px
+	.item
+		@extend %cover
+		background-clip: padding-box
+		border-left: 5px solid transparent
+		border-right: 5px solid transparent
+		float: left
+		margin-bottom: 10px
+		width: 20%
+		&:first-child:nth-last-child(1)
+			width: 100%
+			+breakpoint("xs")
+				width: 100%
+		&:first-child:nth-last-child(2),
+		&:first-child:nth-last-child(2) ~ li
+			width: (100% / 2)
+			+breakpoint("xs")
+				width: (100% / 2)
+		&:first-child:nth-last-child(3),
+		&:first-child:nth-last-child(3) ~ li
+			width: (100% / 3)
+			+breakpoint("xs")
+				width: (100% / 1)
+		&:first-child:nth-last-child(4),
+		&:first-child:nth-last-child(4) ~ li
+			width: (100% / 4)
+			+breakpoint("xs")
+				width: (100% / 2)
+		&:first-child:nth-last-child(5),
+		&:first-child:nth-last-child(5) ~ li
+			width: (100% / 5)
+			+breakpoint("xs")
+				width: (100% / 2)
+		&:first-child:nth-last-child(6),
+		&:first-child:nth-last-child(6) ~ li
+			width: (100% / 6)
+			+breakpoint("xs")
+				width: (100% / 2)
+	a
+		// background: url("../img/pattern.png")
+		color: #fff
+		display: block
+		height: 217px
+		position: relative
+	.title
+		// @extend %cf
+		+stretch-x
+		background: rgba(#000,.6)
+		bottom: 0
+		margin: 0
+		padding: 12px 10px
+		text-align: center
+
+// Blog
+
+.posts
+	float: left
+	margin-bottom: 80px
+	width: 71%
+	+breakpoint("md")
+		float: none
+		width: 100%
+	.item
+		background-position: left center
+		background-size: cover
+		font: 13px/22px $sans
+		margin-bottom: 40px
+		.button
+			clear: both
+			float: right
+			margin-top: 10px
+	a
+		background: url("../img/pattern.png")
+		color: #fff
+		display: block
+		text-decoration: none
+	.body
+		@extend %cf
+		background: rgba(#000,.6)
+		margin-left: 29%
+		padding: 18px
+		+breakpoint("xs")
+			margin-left: 0
+	.title
+		color: $yellow-light
+		font: bold 32px $sans
+		margin-bottom: 5px
+	.date
+		display: block
+		font-style: italic
+		margin-bottom: 5px
+	.load-more
+		display: block
+		width: 100%
+
+.entry
+	.header
+		@extend %cf
+		border-bottom: 1px solid $gray-light
+		padding-bottom: 10px
+		.date
+			float: left
+			font: italic 13px/26px $sans
+			margin-top: 10px
+		.share,
+		.sharedaddy
+			clear: none
+			float: right
+			margin: 10px 0 0
+	.footer
+		@extend %cf
+		border-top: 1px solid $gray-light
+		margin: -80px 0 120px
+		padding-top: 40px
+	.prev-post,
+	a[rel="prev"]
+		@extend .button
+		@extend .button.alt
+		float: left
+		margin: 0 0 10px !important
+	.next-post,
+	a[rel="next"]
+		@extend .button
+		@extend .button.alt
+		float: right
+		margin: 0 0 10px !important
+
+// Media
+
+.media
+	.share,
+	.sharedaddy
+		float: left
+		margin: 3px 0 0
+		+breakpoint("sm")
+			float: none
+	.links
+		float: right
+		+breakpoint("sm")
+			clear: left
+			float: none
+			.button
+				display: block
+				margin: 0
+				text-align: center
+				width: 100%
+				~ .button
+					margin-top: 10px

@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		main.main.archive
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				.header
+					h1.heading Page title header
+				ol.features.alt
+					mixin feature
+						li.item(style="background-image: url(img/temp/city.jpg)")
+							a(href="la_008_template_product_page.html"): .body
+								h2.title Hostel name that can be quite long
+								p R$ 200,00 to R$ 350,00
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+					+feature
+		include _footer.jade

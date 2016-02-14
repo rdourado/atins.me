@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body.no-js
+		include _header.jade
+		main.main
+			.hero
+				.list
+					mixin hero
+						.item(style="background-image: url(img/temp/beach.jpg)"): a(href="la_001_template_text.html"): .wrap
+							h1.heading Kick back, unplug, relax
+							p.excerpt Far removed from the hurried world of civilization,<br>in Atins you will enjoy pure tranquility and simples life bliss.
+					+hero
+					+hero
+					+hero
+			hr
+			section.div
+				.wrap
+					h2.heading Welcome to Atins!
+					p Nestled in between the dunes of the Lençóis Maranhenses National Park, the delta of the Rio Preguiças, a little contributory creek (Igarapé), and the Atlantic Ocean's coastline, Atins is a place of pure tranquility and simples life bliss. Given its unique setting people also like to refer to is as ‘the island’. In Atins you won’t find streets or any conventional pavement; here life sets place in a large sand pit. Mobile phone connectivity is patchy and Internet access is limited, electricity arrived only a few years ago and credit cards only start be seen in some places. Removed from the hurried world of civilisation, Atins offers endless dunes, sandy beaches as far as the eye can see, warm shallow waters, swaying palm trees and a constant, soothing sea breeze.
+					p: img(src="http://dummyimage.com/955x143" alt="Banner" width="955" height="143")
+			hr
+			section.videos.div
+				.wrap
+					h2.heading Latest Videos
+					p.frame: iframe(
+						width="853"
+						height="480"
+						src="https://www.youtube.com/embed/jHbyQ_AQP8c"
+						frameborder="0"
+						allowfullscreen
+					)
+					p.txt-right
+						a.button(href="#") Check more videos on
+							img(src="img/youtube.png" alt="Youtube" width="73" height="30")
+						a.button(href="#") Check more videos on
+							img(src="img/vimeo.png" alt="Vimeo" width="56" height="30")
+			hr
+			form.newsletter(action="/" method="post")
+				fieldset.wrap
+					legend.heading Sign up for Atins.me newsletters!
+					input(type="email" name="email" placeholder="Type your e-mail" aria-label="Type your e-mail" required aria-required="true")
+					button.button(type="submit") Send
+			hr
+			section.div
+				.wrap
+					h2.heading From the blog!
+					ul.features
+						mixin feature
+							li.item(style="background-image: url(img/temp/city.jpg)")
+								a(href="la_006c_template_blogPost.html"): .body
+									h3.title Heading
+									p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros ele mentum tristique mentum tristique.
+										br
+										em.more Read more &gt;
+						+feature
+						+feature
+						+feature
+						+feature
+					p.txt-right
+						a.button(href="la_005_blogPage.html") Check more posts <i class="caret"></i>
+		include _footer.jade
+		script(src="js/lib/jquery-2.1.4.min.js")
+		script(src="js/lib/slick.min.js")
+		script.
+			$('body').removeClass('no-js');
+			$('.list','.hero').slick({dots: true});

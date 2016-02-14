@@ -1,0 +1,138 @@
+@font-face
+	font-family: "atins"
+	src: url("../fonts/atins.eot")
+	src: url("../fonts/atins.eot?#iefix") format("embedded-opentype"), url("../fonts/atins.woff") format("woff"), url("../fonts/atins.ttf") format("truetype"), url("../fonts/atins.svg#atins") format("svg")
+	font-weight: normal
+	font-style: normal
+
+[data-icon]:before
+	font-family: "atins" !important
+	content: attr(data-icon)
+	font-style: normal !important
+	font-weight: normal !important
+	font-variant: normal !important
+	text-transform: none !important
+	speak: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before
+	font-family: "atins" !important
+	font-style: normal !important
+	font-weight: normal !important
+	font-variant: normal !important
+	text-transform: none !important
+	speak: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon-flickr:before
+  content: "\e000"
+.icon-youtube:before
+  content: "\e001"
+.icon-instagram:before
+  content: "\e002"
+.icon-twitter:before
+  content: "\e003"
+.icon-googleplus:before
+  content: "\e004"
+.icon-facebook:before
+  content: "\e005"
+.icon-tripadvisor:before
+  content: "\e006"
+.icon-vimeo:before
+  content: "\e007"
+.icon-mail:before,
+.icon-email:before
+  content: "\e008"
+.icon-skype:before
+  content: "\e009"
+.icon-phone:before,
+.icon-whatsapp:before
+  content: "\e00a"
+.icon-youtube-logo:before
+  content: "\e00b"
+.icon-vimeo-logo:before
+  content: "\e00c"
+.icon-whatsapp-o:before
+  content: "\e00d"
+.icon-booking:before
+  content: "\e00e"
+.icon-tv:before
+  content: "\e00f"
+.icon-air:before
+  content: "\e010"
+.icon-airbnb:before
+  content: "\e011"
+.icon-mobile:before,
+.icon-cellphone:before
+  content: "\e012"
+.icon-link:before
+  content: "\e013"
+.icon-coffee:before
+  content: "\e014"
+.icon-wifi:before
+  content: "\e015"
+.icon-flickr-o:before
+  content: "\e016"
+.icon-hot-shower:before
+  content: "\e017"
+.icon-air-condition:before
+  content: "\e018"
+.icon-ventilator:before
+  content: "\e019"
+.icon-safebox:before
+  content: "\e01a"
+.icon-kite-station:before
+  content: "\e01b"
+.icon-pool:before
+  content: "\e01c"
+.icon-restaurant:before
+  content: "\e01d"
+.icon-minibar:before
+  content: "\e01e"
+
+.icon-bus,
+.icon-taxi,
+.icon-boat,
+.icon-jeep,
+.icon-minibus
+	display: inline-block
+	height: 40px
+	vertical-align: middle
+	width: 40px
+.icon-bus
+	background: url("../img/bus.png") no-repeat center center
+	+breakpoint("retina")
+		background-image: url("../img/bus@2x.png")
+		background-size: contain
+.icon-taxi
+	background: url("../img/taxi.png") no-repeat center center
+	+breakpoint("retina")
+		background-image: url("../img/taxi@2x.png")
+		background-size: contain
+.icon-boat
+	background: url("../img/boat.png") no-repeat center center
+	+breakpoint("retina")
+		background-image: url("../img/boat@2x.png")
+		background-size: contain
+.icon-jeep
+	background: url("../img/jeep.png") no-repeat center center
+	+breakpoint("retina")
+		background-image: url("../img/jeep@2x.png")
+		background-size: contain
+.icon-minibus
+	background: url("../img/minibus.png") no-repeat center center
+	+breakpoint("retina")
+		background-image: url("../img/minibus@2x.png")
+		background-size: contain
+
+// @each $l in (en de pt-br fr it es)
+// 	.lang-#{$l}
+// 		background: url("../img/#{$l}.png") no-repeat
+// 		background-size: contain
+// 		height: 18px
+// 		width: 27px

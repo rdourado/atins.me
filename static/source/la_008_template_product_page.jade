@@ -1,0 +1,95 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		article.main.product
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				header.header
+					h1.heading Product Page Name Header
+				.content
+					include _share.jade
+					p: img(src="img/temp/city-2.jpg" alt="" width="952" height="350")
+					p In 2013 Alejo and his partner Maria opened their Kite school. The school facilities are situated on Atins’ main road, right next to the drop-off point of the boats and neighbouring Filhos do Vento, and backing on to the beach.
+					p AKB offers private and semiprivate kite lessons. All instructors are experienced IKO internationally certified instructors. Lessons are available in Portuguese, English, French and Spanish. Individual and group lessons are offered in English, Portuguese, French and Spanish.
+					p The school works with new equipment including radio communication. Several options of guided downwind and kite tours are arranged depending on your level of riding and personal kite style preferences.
+					p AKB also offers re pair services, gear sale and rental, facilities for cleaning, drying and storing your equipments.
+				section.sidebar
+					.widget
+						h3.title Information
+						p: a(href="#"): img(src="img/temp/trip-advisor.png" alt="" width="160" height="78")
+
+						h4 Contact
+						p Maria or Alejo
+						p
+							| + 55 98 8308-0871 (Tim)
+							br
+							| + 55 98 8710-8551 (Oi)
+							br
+							| + 55 98 99100 2022 (Vivo)
+							br
+							i.icon-whatsapp
+							| +55 94 4444 4434
+							br
+							i.icon-skype
+							a(href="#") Connect via Skype
+							br
+							i.icon-mail
+							a(href="#") email@email.com
+
+						h4 Payment Information
+						p
+							| R$ 200,00 - R$ 300,00 per person
+							br
+							img(src="img/visa.png" alt="Visa" width="26")
+							img(src="img/mastercard.png" alt="Mastercard" width="26")
+							img(src="img/paypal.png" alt="Paypal" width="26")
+
+						h4 Rooms
+						p
+							| 8 Rooms
+							br
+							| Max. 3 persons per room
+
+						h4 Languages
+						p
+							img(src="http://dummyimage.com/26x16" alt="" width="26" height="16")
+							img(src="http://dummyimage.com/26x16" alt="" width="26" height="16")
+							img(src="http://dummyimage.com/26x16" alt="" width="26" height="16")
+							img(src="http://dummyimage.com/26x16" alt="" width="26" height="16")
+
+						h4 Available Amenities
+						ul
+							li
+								i.icon-coffee
+								| Breakfast
+							li
+								i.icon-wifi
+								| Wi-fi
+							li
+								i.icon-mobile
+								| Mobile network receptivity
+							li
+								i.icon-air
+								| Air conditioning
+							li
+								i.icon-tv
+								| Television
+
+						h4 External Websites
+						p
+							a.icon-link(href="#")
+							a.icon-facebook(href="#")
+							a.icon-googleplus(href="#")
+							a.icon-airbnb(href="#")
+							a.icon-booking(href="#")
+
+		include _footer.jade

@@ -1,0 +1,70 @@
+header.head
+	.wrap
+		.logo: a(href="index.html")
+			img(src="img/logo@2x.png" alt="Atins.me" width="213" height="37")
+		include _social.jade
+	nav.nav#menu: .wrap
+		a.toggle-on(href="#menu")
+			span
+			span
+			span
+		a.toggle-off(href="#")
+			span
+			span
+		form.search(action="la_005_blogPage.html" method="get"): fieldset
+			input(
+				type="search"
+				name="s"
+				required
+				aria-required="true"
+				placeholder="Search"
+				aria-label="Search"
+			)
+			button(type="submit") Ok
+		ul.menu
+			li.menu-item.menu-item-has-children
+				a(href="la_003_template_text_sidebar.html") Atins and Region
+				ul.submenu
+					li.menu-item: a(href="la_003_template_text_sidebar.html") Lençóis Maranhenses
+					li.menu-item: a(href="la_001_template_text.html") Atins
+					li.menu-item.menu-item-has-children
+						a(href="la_004_template_main_region.html") The region
+						ul.submenu
+							li.menu-item: a(href="la_001_template_text.html") Jericocoara
+							li.menu-item: a(href="la_001_template_text.html") São Luís
+							li.menu-item: a(href="la_001_template_text.html") Delta do Parnáiba
+							li.menu-item: a(href="la_001_template_text.html") Alcântara
+							li.menu-item: a(href="la_001_template_text.html") Barra Grande
+			li.menu-item: a(href="la_003_template_text_sidebar.html") Useful Information
+			li.menu-item.menu-item-has-children
+				a(href="la_001_template_text.html") Travel
+				ul.submenu
+					li.menu-item: a(href="la_009_template_text_information_box.html") To Atins
+					li.menu-item: a(href="la_009_template_text_information_box.html") From Atins
+			li.menu-item.menu-item-has-children
+				a(href="la_009_template_text_information_box.html") Activities
+				ul.submenu
+					li.menu-item: a(href="la_011_template_contactPage.html") Kiteboarding
+					li.menu-item: a(href="la_011_template_contactPage.html") Tours &amp; treks
+					li.menu-item: a(href="la_011_template_contactPage.html") Beach Life
+					li.menu-item: a(href="la_011_template_contactPage.html") Windsurfing &amp; Surfing
+			li.menu-item: a(href="la_010_template_Media.html") Photos
+			li.menu-item.menu-item-has-children
+				a(href="la_007_template_listings.html") Listings
+				ul.submenu
+					li.menu-item: a(href="la_007_template_listings.html") Hostels
+					li.menu-item: a(href="la_007_template_listings.html") Holiday houses
+					li.menu-item: a(href="la_007_template_listings.html") Restaurants and bars
+					li.menu-item: a(href="la_007_template_listings.html") Kiteboarding
+					li.menu-item: a(href="la_007_template_listings.html") Tourguides
+					li.menu-item: a(href="la_007_template_listings.html") Real estate
+			li.menu-item: a(href="la_005_blogPage.html") Blog
+			li.menu-item: a(href="la_011_template_contactPage.html") Contact
+		ul.lang
+			li.menu-item: a(href="#")
+				img(src="http://dummyimage.com/28x18" alt="BR" width="28" height="18")
+			li.menu-item: a(href="#")
+				img(src="http://dummyimage.com/28x18" alt="US" width="28" height="18")
+			li.menu-item: a(href="#")
+				img(src="http://dummyimage.com/28x18" alt="GE" width="28" height="18")
+hr

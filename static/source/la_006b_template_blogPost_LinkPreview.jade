@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		article.main.entry
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				header.header
+					h1.heading Page Title Header
+					time.date Published on 30/10/2015
+					include _share.jade
+				.content
+					figure.preview
+						img(src="img/temp/thumb.jpg" alt="" width="126" height="126")
+						figcaption.caption
+							h2 Header
+							p Seen from the air, the dunes look like white linens hung out to dry on a windy afternoon. In fact, the name of this place, Lençóis Maranhenses, means the “bedsheets of Maranhão”, the state in Brazil on the tropical northeastern coast where the half-moon-shaped dunes are found. By any name it is a magical desert, with wave after wave of shimmering white sand. Shoals of silvery fish swim in brilliant blue and green pools left behind by the rains.
+						footer.source Source: <a href="#">url.com</a>
+					p A Sea of Dunes – Conjured by wind and water, a magical sandscape on the northeastern coast of Brazil is no mirage.
+					p Seen from the air, the dunes look like white linens hung out to dry on a windy afternoon. In fact, the name of this place, Lençóis Maranhenses, means the “bedsheets of Maranhão”, the state in Brazil on the tropical northeastern coast where the half-moon-shaped dunes are found. By any name it is a magical desert, with wave after wave of shimmering white sand. Shoals of silvery fish swim in brilliant blue and green pools left behind by the rains. Shepherds lead caravans of goats over towering dunes. And fishermen head out to sea, guided only by the stars and the ghosts of old shipwrecks.
+					p “It feels like a parallel world,” says Carolina Alvite, former director of the 600-square-mile national park created three decades ago to protect this unlikely ecosystem. It’s as if the sea near the Bahamas suddenly appeared like a mirage in the middle of the Sahara.
+					p Only in this desert the mirage is real.
+					p Actually, by the most technical of standards, the Lençóis isn’t really a desert, says Antonio Cordeiro Feitosa, a geographer at the Federal University of Maranhão. Forty-seven inches or so of rain fall on the region a year. By definition, a desert averages fewer than ten inches a year. And it is the presence of water that makes the sandscape possible. Two nearby rivers, the Parnaíba and Preguiças, carry sand from the interior of the continent to the Atlantic, where ocean currents push them westward. Much of the sediment is deposited along the park’s 44-mile-long shoreline. Here, during the dry season, especially in October and November, a relentless northeasterly wind drives the sand as far as 30 miles inland, sculpting crescent-shaped dunes up to 130 feet high as far as the eye can see. Cordeiro’s eye also sees the perpetual motion of Lençóis Maranhenses. In places these dunes may advance by as much as 65 feet a year. “The landscape is radically transformed by each seasonal cycle,” he says.
+					p.tags
+						| Related subjects:
+						| <a href="la_005_blogPage.html">Tag 1</a>, <a href="la_005_blogPage.html">Tag 2</a>, <a href="la_005_blogPage.html">Tag 3</a>
+					include _share.jade
+				.footer
+					a.button.alt.prev-post(href="la_006_template_blogPost.html") <i class="caret alt"></i> Previous post title
+					a.button.alt.next-post(href="la_006c_template_blogPost.html") Next post title <i class="caret"></i>
+		include _footer.jade

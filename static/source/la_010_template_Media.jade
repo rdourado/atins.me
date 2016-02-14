@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		main.main.media
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				.header
+					h1.heading Media Header
+					include _share.jade
+					.links
+						a.button.alt.pink(href="#")
+							i.icon-flickr
+							| More on Flickr
+						a.button.alt.brown(href="#")
+							i.icon-instagram
+							| More on Instagram
+				.content
+					.gallery
+						mixin item
+							.gallery-item: img(src="img/temp/thumb.jpg" alt="" width="170" height="170")
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+						+item
+					.links
+						a.button.alt.pink(href="#")
+							i.icon-flickr
+							| More on Flickr
+						a.button.alt.brown(href="#")
+							i.icon-instagram
+							| More on Instagram
+		include _footer.jade

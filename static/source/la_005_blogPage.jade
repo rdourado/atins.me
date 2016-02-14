@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		main.main.blog
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				header.header
+					h1.heading From the blog!
+				.posts
+					.item(style="background-image: url(img/temp/bike.jpg)")
+						a(href="la_006_template_blogPost.html"): .body
+							h2.title Post Template 1
+							time.date 30/10/2015
+							p A Sea of Dunes – Conjured by wind and water, a magical sandscape on the northeastern coast of Brazil is no mirage. Seen from the air, the dunes look like white linens hung out to dry on a windy afternoon. In fact, the name of this place, Lençóis Maranhenses…
+							.button.alt Read more <i class="caret"></i>
+					.item(style="background-image: url(img/temp/bike.jpg)")
+						a(href="la_006b_template_blogPost_LinkPreview.html"): .body
+							h2.title Post Template 2
+							time.date 30/10/2015
+							p A Sea of Dunes – Conjured by wind and water, a magical sandscape on the northeastern coast of Brazil is no mirage. Seen from the air, the dunes look like white linens hung out to dry on a windy afternoon. In fact, the name of this place, Lençóis Maranhenses…
+							.button.alt Read more <i class="caret"></i>
+					mixin post
+						.item(style="background-image: url(img/temp/bike.jpg)")
+							a(href="la_006c_template_blogPost.html"): .body
+								h2.title Post Template 3
+								time.date 30/10/2015
+								p A Sea of Dunes – Conjured by wind and water, a magical sandscape on the northeastern coast of Brazil is no mirage. Seen from the air, the dunes look like white linens hung out to dry on a windy afternoon. In fact, the name of this place, Lençóis Maranhenses…
+								.button.alt Read more <i class="caret"></i>
+					+post
+					+post
+					+post
+					+post
+					+post
+					button.button.load-more + Posts
+				footer.sidebar
+					aside.widget.twitter
+						h3.title
+							i.icon-twitter
+							| Atins on Twitter
+						p TODO: add javascript
+						a.more(href="#")
+							i.icon-twitter
+							| Check more tweets
+					aside.widget.instagram
+						h3.title
+							i.icon-instagram
+							| Atins on Instagram
+						p TODO: add javascript
+						a.more(href="#")
+							i.icon-instagram
+							| Check more photos
+		include _footer.jade

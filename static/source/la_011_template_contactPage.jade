@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Atins.me
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		include _header.jade
+		article.main.page.with-sidebar
+			.wrap
+				nav.breadcrumb
+					ul
+						li: a(href="#") Breadcrumb
+						li: a(href="#") Sublink
+				header.header
+					h1.heading Contact Us
+				.content
+					p Nestled in between the dunes of the Lençóis Maranhenses National Park, the delta of the Rio Preguiças, a little contributory creek (Igarapé), and the Atlantic Ocean’s coastline, Atins is a place of pure tranquility and simple life bliss. Removed from the hurried world of civilisation, Atins offers endless dunes, sandy beaches as far as the eye can see, warm shallow waters, swaying palm trees and a constant, soothing sea breeze.
+					p Atins.me is a collective effort by an assortment of enterprising gringos affiliated with the village. Many of us live permanently or have lived temporarily in the village. As technology becomes more widely accessible to the native residents, we hope to extend the group of collaborators and fully embrace the locals’ contribution.
+					form(action="" method="post")
+						p.field: input(
+							type="text"
+							name="name"
+							placeholder="Name"
+							aria-label="Name"
+							required
+							aria-required="true"
+						)
+						p.field: input(
+							type="email"
+							name="email"
+							placeholder="Email"
+							aria-label="Email"
+							required
+							aria-required="true"
+						)
+						p.field: textarea(
+							name="message"
+							placeholder="Message"
+							aria-label="Message"
+							required
+							aria-required="true"
+							cols="30"
+							rows="8"
+						)
+						p.submit: button.button.alt(type="submit") Send message
+				footer.sidebar
+					aside.widget.twitter
+						h3.title
+							i.icon-twitter
+							| Atins on Twitter
+						p TODO: add javascript
+						a.more(href="#")
+							i.icon-twitter
+							| Check more tweets
+		include _footer.jade
